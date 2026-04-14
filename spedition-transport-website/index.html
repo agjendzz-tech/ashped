@@ -1,707 +1,384 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="sq">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A SHPED – AGS / Spedition & Transport</title>
+    <title>A SHPED | Shpedicion Profesional</title>
+    <meta
+      name="description"
+      content="A SHPED ofron shpedicion profesional, dokumentacion doganor dhe koordinim operacional për lëvizje të sigurta dhe efikase të mallrave."
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Main header and navigation -->
-    <header class="site-header">
-      <div class="container site-header-inner">
-        <a href="#home" class="logo" aria-label="A SHPED – AGS home">
-          <div class="logo-marks">
-            <img
-              src="logo-ashped.png"
-              alt="A SHPED logo"
-              class="logo-mark logo-mark-ashped"
-            />
-            <img
-              src="logo-ags.png"
-              alt="AGS logo"
-              class="logo-mark logo-mark-ags"
-            />
-          </div>
-          <div class="logo-text">
-            <span class="logo-main">A SHPED – AGS</span>
-            <span class="logo-sub">Spedition &amp; Transport</span>
-          </div>
-        </a>
-        <nav class="main-nav" aria-label="Main navigation">
-          <a id="nav-home" href="#home" data-i18n="nav.home">Home</a>
-          <a id="nav-spedition" href="#spedition" data-i18n="nav.spedition">Spedition (A SHPED)</a>
-          <a id="nav-transport" href="#transport" data-i18n="nav.transport">Transport &amp; Logistics (AGS)</a>
-          <a id="nav-about" href="#about" data-i18n="nav.about">About Us</a>
-          <a id="nav-contact" href="#contact" data-i18n="nav.contact">Contact</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <!-- Hero -->
-      <section class="hero" id="home">
-        <!-- Full-width background video -->
-        <video
-          class="hero-video-bg"
-          src="hero-truck.mp4"
-          autoplay
-          muted
-          loop
-          playsinline
-          aria-hidden="true"
-        ></video>
-
-        <div class="container hero-inner">
-          <div class="hero-copy">
-            <h1 data-i18n="hero.title">Reliable Spedition &amp; Transport Across Europe</h1>
-            <p data-i18n="hero.text">
-              A SHPED takes care of your customs and documentation, while AGS
-              delivers fast and secure transport and logistics by road, air, and
-              sea.
-            </p>
-            <div class="hero-actions">
-              <a href="#services" class="btn-primary" data-i18n="hero.ctaServices">Our Services</a>
-              <a href="#contact" class="btn-secondary" data-i18n="hero.ctaContact">Contact Us</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Services overview -->
-      <section id="services" class="section section-alt">
+    <div class="page-shell">
+      <header class="site-header" id="top">
+        <div class="header-backdrop"></div>
         <div class="container">
-          <h2 data-i18n="services.title">What We Do</h2>
-          <p class="section-intro" data-i18n="services.text">
-            We combine professional spedition services with flexible transport
-            and logistics, giving you one partner from customs to final
-            delivery.
-          </p>
-        </div>
-      </section>
+          <nav class="main-nav">
+            <a href="#top" class="brand" aria-label="A SHPED home">
+              <img src="logo-ashped.png" alt="A SHPED logo" class="brand-logo" />
+              <span class="brand-copy">
+                <strong>A SHPED</strong>
+              </span>
+            </a>
 
-      <!-- Spedition services (A SHPED) -->
-      <section id="spedition" class="section">
-        <div class="container">
-          <header class="section-header">
-            <h2 data-i18n="spedition.title">A SHPED – Spedition Services</h2>
-            <p data-i18n="spedition.text">
-              Professional support for customs and documentation so your cargo
-              crosses borders smoothly and on time.
-            </p>
-          </header>
-          <div class="cards">
-            <article class="card">
-              <h3 data-i18n="spedition.card1.title">T1 Declarations</h3>
-              <p data-i18n="spedition.card1.text">
-                Preparation and handling of T1 transit documents for road
-                transport across Europe.
-              </p>
-            </article>
-            <article class="card">
-              <h3 data-i18n="spedition.card2.title">Import &amp; Export Documentation</h3>
-              <p data-i18n="spedition.card2.text">
-                IM4, IM5, IM7, IM9, EX1–EX3 and related documentation prepared
-                correctly and on time.
-              </p>
-            </article>
-            <article class="card">
-              <h3 data-i18n="spedition.card3.title">Transit &amp; Customs Support</h3>
-              <p data-i18n="spedition.card3.text">
-                Assistance with customs clearance, CMR, and transit procedures
-                for your shipments.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Transport & logistics (AGS) -->
-      <section id="transport" class="section section-alt">
-        <div class="container">
-          <header class="section-header">
-            <h2 data-i18n="transport.title">AGS – Transport &amp; Logistics</h2>
-            <p data-i18n="transport.text">
-              Flexible road, air, and sea solutions tailored to your cargo,
-              timing, and budget.
-            </p>
-          </header>
-          <div class="cards">
-            <article class="card">
-              <h3 data-i18n="transport.card1.title">Road Transport</h3>
-              <p data-i18n="transport.card1.text">
-                Full truck loads (FTL) and groupage (LTL) across Europe with
-                reliable partners and clear communication.
-              </p>
-            </article>
-            <article class="card">
-              <h3 data-i18n="transport.card2.title">Air Transport</h3>
-              <p data-i18n="transport.card2.text">
-                Fast solutions for time-critical shipments when every hour
-                counts.
-              </p>
-            </article>
-            <article class="card">
-              <h3 data-i18n="transport.card3.title">Sea Transport</h3>
-              <p data-i18n="transport.card3.text">
-                Container and groupage options for cost-efficient long-distance
-                flows.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- About -->
-      <section id="about" class="section">
-        <div class="container narrow">
-          <h2 data-i18n="about.title">About A SHPED – AGS</h2>
-          <p data-i18n="about.text">
-            Based in Prishtina, Kosovo, we focus on long-term partnerships with
-            our clients. Our team combines local expertise with international
-            experience to keep your supply chain running smoothly.
-          </p>
-        </div>
-      </section>
-
-      <!-- Contact & quote -->
-      <section id="contact" class="section section-alt">
-        <div class="container">
-          <div class="contact-layout">
-            <div class="contact-info">
-              <h2 data-i18n="contact.title">Contact &amp; Quote</h2>
-              <p data-i18n="contact.text">
-                Send us your route and cargo details and we will reply with a
-                tailored offer.
-              </p>
-              <ul class="contact-list">
-                <li>
-                  <strong data-i18n="contact.labelEmail">Email:</strong>
-                  <a href="mailto:a3.shped@gmail.com">a3.shped@gmail.com</a>
-                </li>
-                <li>
-                  <strong data-i18n="contact.labelPhone">Phone:</strong>
-                  +383 (0) 45 507 684
-                </li>
-                <li>
-                  <strong data-i18n="contact.labelLocation">Location:</strong>
-                  Prishtina, Kosovo
-                </li>
-                <li>
-                  <strong data-i18n="contact.labelHours">Working hours:</strong>
-                  <span data-i18n="contact.hours">Mon–Sat 08:00–18:00</span>
-                </li>
-              </ul>
-            </div>
-            <form
-              class="contact-form"
-              action="mailto:agim.krasniqi@gmail.com?subject=Transport%20request%20from%20website"
-              method="POST"
-              enctype="text/plain"
+            <button
+              class="menu-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="site-menu"
             >
-              <div class="form-row">
-                <input
-                  type="text"
-                  name="company"
-                  placeholder="Company name"
-                  data-i18n-placeholder="form.company"
-                  required
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  data-i18n-placeholder="form.email"
-                  required
-                />
-              </div>
-              <div class="form-row">
-                <input
-                  type="text"
-                  name="route"
-                  placeholder="Route (e.g. Prishtina → Vienna)"
-                  data-i18n-placeholder="form.route"
-                  required
-                />
-                <input
-                  type="text"
-                  name="cargo"
-                  placeholder="Cargo type / weight"
-                  data-i18n-placeholder="form.cargo"
-                />
-              </div>
-              <textarea
-                name="details"
-                rows="4"
-                placeholder="Additional details (Incoterms, dates, loading conditions)"
-                data-i18n-placeholder="form.details"
-              ></textarea>
-              <button type="submit" class="btn-primary" data-i18n="form.submit">
-                Send Request
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <div class="footer-left">
-          <div class="footer-brand">
-            <strong>A SHPED – AGS</strong>
-            <span>Spedition &amp; Transport</span>
-          </div>
-          <ul class="footer-contact">
-            <li>
-              <strong>Email:</strong>
-              <a href="mailto:a3.shped@gmail.com">a3.shped@gmail.com</a>
-            </li>
-            <li><strong>Phone:</strong> +383 (0) 45 507 684</li>
-            <li><strong>Location:</strong> Prishtina, Kosovo</li>
-            <li><strong>Working hours:</strong> Mon–Sat 08:00–18:00</li>
-          </ul>
-        </div>
-        <div class="footer-right">
-          <nav class="social-nav" aria-label="Social links">
-            <a href="https://www.facebook.com/people/A-shped-Logistic/100090782709369/" aria-label="Facebook" class="social-link social-link-fb" target="_blank" rel="noreferrer">
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="social-icon">
-                <path
-                  d="M13.5 21v-6h2.2a.8.8 0 0 0 .8-.7l.3-2.6a.8.8 0 0 0-.8-.9H13.5V8.3c0-.8.3-1.2 1.3-1.2h1.5a.8.8 0 0 0 .8-.8V4a.8.8 0 0 0-.8-.8H14c-2.7 0-4.2 1.4-4.2 4v2H8.7a.8.8 0 0 0-.8.7l-.2 2.6a.8.8 0 0 0 .8.9h1.6v6Z"
-                />
-              </svg>
-            </a>
-            <a href="https://www.instagram.com/ashped_logistics/" aria-label="Instagram" class="social-link social-link-ig" target="_blank" rel="noreferrer">
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="social-icon">
-                <rect
-                  x="4"
-                  y="4"
-                  width="16"
-                  height="16"
-                  rx="5"
-                  ry="5"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                />
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="4.2"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                />
-                <circle cx="17" cy="7" r="1.1" fill="currentColor" />
-              </svg>
-            </a>
-            <a href="https://www.youtube.com/@ashped" aria-label="YouTube" class="social-link social-link-yt" target="_blank" rel="noreferrer">
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="social-icon">
-                <path
-                  d="M20.5 8.2a2.3 2.3 0 0 0-1.7-1.7C17.5 6 12 6 12 6s-5.5 0-6.8.5A2.3 2.3 0 0 0 3.5 8.2 24.4 24.4 0 0 0 3 12a24.4 24.4 0 0 0 .5 3.8 2.3 2.3 0 0 0 1.7 1.7C6.5 18 12 18 12 18s5.5 0 6.8-.5a2.3 2.3 0 0 0 1.7-1.7A24.4 24.4 0 0 0 21 12a24.4 24.4 0 0 0-.5-3.8Z"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                  stroke-linejoin="round"
-                />
-                <path d="m10 15 4-3-4-3Z" fill="currentColor" />
-              </svg>
-            </a>
-            <a href="https://x.com/A_shped" aria-label="Twitter" class="social-link social-link-x" target="_blank" rel="noreferrer">
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="social-icon">
-                <path d="M5 5h4l3 4.2L15.5 5H19l-5 6.4L19 19h-4l-3.2-4.4L8.5 19H5l5-6.4Z" />
-              </svg>
-            </a>
-          </nav>
-          <div class="language-switcher footer-language">
-            <button class="lang-button" type="button" aria-haspopup="listbox" aria-expanded="false">
-              <span class="lang-button-label">EN</span>
-              <span class="lang-chevron" aria-hidden="true">▾</span>
+              Menu
             </button>
-            <ul class="lang-menu" role="listbox" aria-label="Select language">
-              <li><a href="#" data-lang="en">English</a></li>
-              <li><a href="#" data-lang="de">Deutsch</a></li>
-              <li><a href="#" data-lang="fr">Français</a></li>
-              <li><a href="#" data-lang="it">Italiano</a></li>
-              <li><a href="#" data-lang="sq">Shqip</a></li>
-            </ul>
+
+            <div class="nav-links" id="site-menu">
+              <a href="#services">Shërbimet</a>
+              <a href="#process">Procesi</a>
+              <a href="#about">Rreth Nesh</a>
+              <a href="#contact">Kontakt</a>
+              <a href="#contact" class="nav-cta">Bashkëpunim</a>
+            </div>
+          </nav>
+
+          <section class="hero">
+            <video
+              class="hero-video"
+              src="hero-truck.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+            ></video>
+            <div class="hero-overlay"></div>
+
+            <div class="hero-layout">
+              <div class="hero-copy">
+                <p class="eyebrow">Doganë. Dokumentacion. Koordinim pa vonesa.</p>
+                <h1>Lëvize mallin me një partner që e mban procesin nën kontroll.</h1>
+                <p class="hero-text">
+                  A SHPED mbulon deklaratat transitore, dokumentacionin import-eksport
+                  dhe koordinimin operacional për kompani që kërkojnë saktësi, ritëm
+                  dhe komunikim profesional.
+                </p>
+
+                <div class="hero-actions">
+                  <a href="#contact" class="btn btn-primary">Kërkesë për Bashkëpunim</a>
+                  <a href="#services" class="btn btn-secondary">Shiko Shërbimet</a>
+                </div>
+
+                <div class="hero-stats">
+                  <article>
+                    <strong>24/7</strong>
+                    <span>Komunikim i shpejtë për procese kritike</span>
+                  </article>
+                  <article>
+                    <strong>T1 / IM / EX</strong>
+                    <span>Dokumente të përgatitura me fokus të plotë</span>
+                  </article>
+                  <article>
+                    <strong>Prishtinë</strong>
+                    <span>Partner lokal me qasje rajonale dhe evropiane</span>
+                  </article>
+                </div>
+              </div>
+
+              <aside class="hero-panel">
+                <p class="panel-kicker">A SHPED Workflow</p>
+                <div class="panel-route">
+                  <span>Kërkesa</span>
+                  <span>Dokumente</span>
+                  <span>Doganë</span>
+                  <span>Përfundim</span>
+                </div>
+
+                <div class="panel-box">
+                  <h2>Shpedicion i strukturuar për biznes serioz.</h2>
+                  <p>
+                    Nga dokumenti i parë deri te përfundimi i procedurës, ne e organizojmë procesin që ju të keni qartësi dhe siguri operative.
+                  </p>
+                </div>
+
+                <ul class="panel-list">
+                  <li>Deklarata T1 dhe procedura transiti</li>
+                  <li>Dokumentacion importi dhe eksporti</li>
+                  <li>Koordinim aktiv dhe mbështetje doganore</li>
+                </ul>
+              </aside>
+            </div>
+          </section>
+        </div>
+      </header>
+
+      <main>
+        <section class="section trust-row">
+          <div class="container">
+            <p>
+              A SHPED punon me kompani tregtare, transportues dhe operatorë që kanë
+              nevojë për procedura të qarta dhe ekzekutim profesional.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" id="services">
+          <div class="container">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Shërbimet Kryesore</p>
+                <h2>Gjithçka që i duhet shpedicionit në një partner të vetëm.</h2>
+              </div>
+              <p class="section-text">
+                Shërbimet tona janë ndërtuar për kompani që duan më pak pasiguri, më
+                pak vonesa dhe më shumë kontroll në dokumentacion dhe kalim doganor.
+              </p>
+            </div>
+
+            <div class="service-grid">
+              <article class="service-card featured">
+                <span class="service-number">01</span>
+                <h3>Deklarata T1</h3>
+                <p>
+                  Përgatitje e saktë e dokumenteve të transitit për lëvizje ndërkombëtare me fokus në afat, saktësi dhe pajtueshmëri.
+                </p>
+              </article>
+
+              <article class="service-card">
+                <span class="service-number">02</span>
+                <h3>Import & Export</h3>
+                <p>
+                  IM4, IM5, IM7, IM9 dhe EX1-EX3 të organizuara profesionalisht për të shmangur pengesa operative dhe vonesa të panevojshme.
+                </p>
+              </article>
+
+              <article class="service-card">
+                <span class="service-number">03</span>
+                <h3>Transit & Doganë</h3>
+                <p>
+                  Mbështetje me procedurat doganore, CMR dhe dokumentet shoqëruese për një kalim më të qetë në pikat kufitare.
+                </p>
+              </article>
+
+              <article class="service-card">
+                <span class="service-number">04</span>
+                <h3>Koordinim Operativ</h3>
+                <p>
+                  Komunikim i drejtpërdrejtë me klientin dhe ndjekje e procesit nga nisja deri në përfundim të procedurës.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-dark" id="process">
+          <div class="container">
+            <div class="section-heading stack">
+              <p class="eyebrow">Si Punojmë</p>
+              <h2>Proces i thjeshtë, i qartë dhe i kontrolluar në çdo hap.</h2>
+            </div>
+
+            <div class="timeline">
+              <article class="timeline-card">
+                <span>01</span>
+                <h3>Pranimi i kërkesës</h3>
+                <p>Na dërgoni itinerarin, mallin dhe afatin e transportit.</p>
+              </article>
+              <article class="timeline-card">
+                <span>02</span>
+                <h3>Verifikimi i të dhënave</h3>
+                <p>Kontrollojmë dokumentet dhe përcaktojmë procedurën e duhur.</p>
+              </article>
+              <article class="timeline-card">
+                <span>03</span>
+                <h3>Përgatitja operative</h3>
+                <p>Përgatisim deklaratat dhe koordinojmë procesin me palët përkatëse.</p>
+              </article>
+              <article class="timeline-card">
+                <span>04</span>
+                <h3>Ndjekja e procedurës</h3>
+                <p>Qëndrojmë në kontakt aktiv deri në përfundim të kalimit dhe dosjes.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="about">
+          <div class="container">
+            <div class="about-grid">
+              <div class="about-intro">
+                <p class="eyebrow">Rreth A SHPED</p>
+                <h2>Prezencë serioze për kompani që lëvizin mallra pa kompromis.</h2>
+              </div>
+
+              <div class="about-copy">
+                <p>
+                  Me bazë në Prishtinë, A SHPED fokusohet në procedurat e shpedicionit,
+                  dokumentacionin doganor dhe koordinimin e proceseve që kërkojnë
+                  saktësi dhe ritëm pune.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section instagram-section" id="instagram">
+          <div class="container">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Instagram</p>
+                <h2>Postimet tona të fundit nga A SHPED.</h2>
+              </div>
+            </div>
+
+            <div class="instagram-grid">
+              <a class="instagram-card large" href="https://www.instagram.com/ashped_logistics/" target="_blank" rel="noreferrer">
+                <img src="assets/instagram/post-1-a-shped.jpeg" alt="Postimi Instagram A SHPED" class="instagram-image" />
+                <strong>A SHPED SHPK</strong>
+                <span>@ashped_logistics</span>
+              </a>
+              <a class="instagram-card" href="https://www.instagram.com/ashped_logistics/" target="_blank" rel="noreferrer">
+                <img src="assets/instagram/pajisje-mjeksore.jpeg" alt="Postim Instagram për pajisje mjekësore" class="instagram-image" />
+                <strong>Pajisje mjekësore</strong>
+                <span>@ashped_logistics</span>
+              </a>
+              <a class="instagram-card" href="https://www.instagram.com/ashped_logistics/" target="_blank" rel="noreferrer">
+                <img src="assets/instagram/pajisje-elektronike.jpeg" alt="Postim Instagram për pajisje elektronike" class="instagram-image" />
+                <strong>Pajisje elektronike</strong>
+                <span>@ashped_logistics</span>
+              </a>
+              <a class="instagram-card" href="https://www.instagram.com/ashped_logistics/" target="_blank" rel="noreferrer">
+                <img src="assets/instagram/suplimente.jpeg" alt="Postim Instagram për suplemente" class="instagram-image" />
+                <strong>Suplimente</strong>
+                <span>@ashped_logistics</span>
+              </a>
+              <a class="instagram-card" href="https://www.instagram.com/ashped_logistics/" target="_blank" rel="noreferrer">
+                <img src="assets/instagram/a-shped.jpeg" alt="Postimi Instagram A SHPED SHPK" class="instagram-image" />
+                <strong>A SHPED SHPK</strong>
+                <span>@ashped_logistics</span>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="section contact-section" id="contact">
+          <div class="container">
+            <div class="contact-card">
+              <div class="contact-copy">
+                <p class="eyebrow">Kontakt</p>
+                <h2>Dërgoni kërkesë për bashkëpunim dhe ju kontaktojmë sa më shpejt.</h2>
+                <p>
+                  Na dërgoni të dhënat e kompanisë suaj dhe interesimin për bashkëpunim
+                  në shërbime të shpedicionit, dhe ne ju kontaktojmë me qasje profesionale.
+                </p>
+
+                <ul class="contact-list">
+                  <li><strong>Email:</strong> <a href="mailto:ashped@ashped.com">ashped@ashped.com</a></li>
+                  <li><strong>Phone:</strong> <a href="tel:+38345507684">+383 (0) 45 507 684</a></li>
+                  <li><strong>Location:</strong> Prishtinë, Kosove</li>
+                  <li><strong>Working hours:</strong> E hënë - E shtunë, 08:00 - 18:00</li>
+                </ul>
+              </div>
+
+              <form
+                class="contact-form"
+                id="contact-form"
+              >
+                <div class="form-row">
+                  <input type="text" name="company" placeholder="Emri i kompanisë" required />
+                  <input type="email" name="email" placeholder="Email" required />
+                </div>
+
+                <div class="form-row">
+                  <input type="text" name="industry" placeholder="Industria" required />
+                  <input type="tel" name="phone" placeholder="Numri i telefonit" required />
+                </div>
+
+                <textarea
+                  name="details"
+                  rows="5"
+                  placeholder="Detajet shtesë"
+                ></textarea>
+
+                <button type="submit" class="btn btn-primary">Dërgo Kërkesë për Bashkëpunim</button>
+                <p class="form-status" aria-live="polite"></p>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-content">
+          <div class="footer-branding">
+            <div class="footer-logo-row">
+              <img src="logo-ashped.png" alt="A SHPED logo" class="footer-logo" />
+              <div>
+                <strong>A SHPED</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-links" aria-label="Social links">
+            <a href="https://www.facebook.com/people/A-shped-Logistic/100090782709369/" target="_blank" rel="noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.6 1.6-1.6H16V4.8c-.3 0-.9-.1-1.8-.1-1.8 0-3.1 1.1-3.1 3.3V11H9v3h2.3v7h2.2Z"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/ashped_logistics/" target="_blank" rel="noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3Zm0 1.8A2.7 2.7 0 0 0 4.8 7.5v9a2.7 2.7 0 0 0 2.7 2.7h9a2.7 2.7 0 0 0 2.7-2.7v-9a2.7 2.7 0 0 0-2.7-2.7h-9Zm9.7 1.3a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 1.8a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Z"/>
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/@ashped" target="_blank" rel="noreferrer" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21.4 7.2a2.9 2.9 0 0 0-2-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.4.5a2.9 2.9 0 0 0-2 2.1 30 30 0 0 0-.5 4.8 30 30 0 0 0 .5 4.8 2.9 2.9 0 0 0 2 2.1c1.7.5 7.4.5 7.4.5s5.7 0 7.4-.5a2.9 2.9 0 0 0 2-2.1 30 30 0 0 0 .5-4.8 30 30 0 0 0-.5-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/>
+              </svg>
+            </a>
+            <a href="https://x.com/A_shped" target="_blank" rel="noreferrer" aria-label="X">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18.9 3H21l-6.2 7.1L22 21h-5.6l-4.4-5.8L6.9 21H4.8l6.7-7.7L2 3h5.7l4 5.3L18.9 3Zm-2 16h1.6L6.8 4.9H5.1L16.9 19Z"/>
+              </svg>
+            </a>
           </div>
         </div>
-      </div>
-      <div class="container footer-bottom">
-        <p>
-          © <span id="year"></span> A SHPED – AGS / Spedition &amp; Transport. All rights
-          reserved.
-        </p>
-      </div>
-      <script>
-        // Dynamic year
-        document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Simple i18n setup (English + Albanian, others fall back to English)
-        const langButton = document.querySelector('.lang-button');
-        const langMenu = document.querySelector('.lang-menu');
-        const langLabel = document.querySelector('.lang-button-label');
+        <div class="container footer-bottom">
+          <p>&copy; <span id="year"></span> A SHPED. Të gjitha të drejtat e rezervuara.</p>
+          <div class="footer-language">
+            <button
+              class="language-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="language-menu"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.9 9h-3.1a15.8 15.8 0 0 0-1.4-5A8.1 8.1 0 0 1 18.9 11ZM12 4.1c1.2 1.4 2.1 4 2.4 6.9H9.6C9.9 8.1 10.8 5.5 12 4.1ZM9.6 13h4.8c-.3 2.9-1.2 5.5-2.4 6.9-1.2-1.4-2.1-4-2.4-6.9ZM9.6 6a15.8 15.8 0 0 0-1.4 5H5.1A8.1 8.1 0 0 1 9.6 6ZM5.1 13h3.1a15.8 15.8 0 0 0 1.4 5A8.1 8.1 0 0 1 5.1 13Zm9.3 5a15.8 15.8 0 0 0 1.4-5h3.1a8.1 8.1 0 0 1-4.5 5Z"/>
+              </svg>
+              <span class="language-current">Shqip</span>
+            </button>
 
-        const translations = {
-          en: {
-            'topbar.hours': 'Mon–Sat 08:00–18:00',
-            'nav.home': 'Home',
-            'nav.spedition': 'Spedition (A SHPED)',
-            'nav.transport': 'Transport & Logistics (AGS)',
-            'nav.about': 'About Us',
-            'nav.contact': 'Contact',
-            'hero.title': 'Reliable Spedition & Transport Across Europe',
-            'hero.text':
-              'A SHPED takes care of your customs and documentation, while AGS delivers fast and secure transport and logistics by road, air, and sea.',
-            'hero.ctaServices': 'Our Services',
-            'hero.ctaContact': 'Contact Us',
-            'services.title': 'What We Do',
-            'services.text':
-              'We combine professional spedition services with flexible transport and logistics, giving you one partner from customs to final delivery.',
-            'spedition.title': 'A SHPED – Spedition Services',
-            'spedition.text':
-              'Professional support for customs and documentation so your cargo crosses borders smoothly and on time.',
-            'spedition.card1.title': 'T1 Declarations',
-            'spedition.card1.text':
-              'Preparation and handling of T1 transit documents for road transport across Europe.',
-            'spedition.card2.title': 'Import & Export Documentation',
-            'spedition.card2.text':
-              'IM4, IM5, IM7, IM9, EX1–EX3 and related documentation prepared correctly and on time.',
-            'spedition.card3.title': 'Transit & Customs Support',
-            'spedition.card3.text':
-              'Assistance with customs clearance, CMR, and transit procedures for your shipments.',
-            'transport.title': 'AGS – Transport & Logistics',
-            'transport.text':
-              'Flexible road, air, and sea solutions tailored to your cargo, timing, and budget.',
-            'transport.card1.title': 'Road Transport',
-            'transport.card1.text':
-              'Full truck loads (FTL) and groupage (LTL) across Europe with reliable partners and clear communication.',
-            'transport.card2.title': 'Air Transport',
-            'transport.card2.text':
-              'Fast solutions for time-critical shipments when every hour counts.',
-            'transport.card3.title': 'Sea Transport',
-            'transport.card3.text':
-              'Container and groupage options for cost-efficient long-distance flows.',
-            'about.title': 'About A SHPED – AGS',
-            'about.text':
-              'Based in Prishtina, Kosovo, we focus on long-term partnerships with our clients. Our team combines local expertise with international experience to keep your supply chain running smoothly.',
-            'contact.title': 'Contact & Quote',
-            'contact.text':
-              'Send us your route and cargo details and we will reply with a tailored offer.',
-            'contact.labelEmail': 'Email:',
-            'contact.labelPhone': 'Phone:',
-            'contact.labelLocation': 'Location:',
-            'contact.labelHours': 'Working hours:',
-            'contact.hours': 'Mon–Sat 08:00–18:00',
-            'form.company': 'Company name',
-            'form.email': 'Email',
-            'form.route': 'Route (e.g. Prishtina → Vienna)',
-            'form.cargo': 'Cargo type / weight',
-            'form.details':
-              'Additional details (Incoterms, dates, loading conditions)',
-            'form.submit': 'Send Request'
-          },
-          de: {
-            'topbar.hours': 'Mo–Sa 08:00–18:00',
-            'nav.home': 'Startseite',
-            'nav.spedition': 'Spedition (A SHPED)',
-            'nav.transport': 'Transport & Logistik (AGS)',
-            'nav.about': 'Über uns',
-            'nav.contact': 'Kontakt',
-            'hero.title': 'Zuverlässige Spedition & Transport in ganz Europa',
-            'hero.text':
-              'A SHPED übernimmt Ihre Zollabwicklung und Dokumentation, während AGS schnellen und sicheren Transport sowie Logistik per Straße, Luft und See bietet.',
-            'hero.ctaServices': 'Unsere Leistungen',
-            'hero.ctaContact': 'Kontakt aufnehmen',
-            'services.title': 'Was wir tun',
-            'services.text':
-              'Wir verbinden professionelle Speditionsleistungen mit flexiblen Transport- und Logistiklösungen – ein Partner von der Verzollung bis zur Zustellung.',
-            'spedition.title': 'A SHPED – Speditionsleistungen',
-            'spedition.text':
-              'Professionelle Unterstützung bei Zoll- und Transportdokumenten, damit Ihre Sendungen Grenzen reibungslos und termingerecht passieren.',
-            'spedition.card1.title': 'T1-Dokumente',
-            'spedition.card1.text':
-              'Erstellung und Abwicklung von T1-Transitdokumenten für Straßentransporte in ganz Europa.',
-            'spedition.card2.title': 'Import- & Exportdokumente',
-            'spedition.card2.text':
-              'IM4, IM5, IM7, IM9, EX1–EX3 und weitere Unterlagen korrekt und fristgerecht vorbereitet.',
-            'spedition.card3.title': 'Transit- & Zollsupport',
-            'spedition.card3.text':
-              'Unterstützung bei Zollabfertigung, CMR und Transitverfahren für Ihre Sendungen.',
-            'transport.title': 'AGS – Transport & Logistik',
-            'transport.text':
-              'Flexible Lösungen auf Straße, in der Luft und auf See – abgestimmt auf Ihre Fracht, Laufzeiten und Ihr Budget.',
-            'transport.card1.title': 'Straßentransport',
-            'transport.card1.text':
-              'Komplettladungen (FTL) und Teilladungen (LTL) in Europa mit zuverlässigen Partnern und klarer Kommunikation.',
-            'transport.card2.title': 'Luftfracht',
-            'transport.card2.text':
-              'Schnelle Lösungen für zeitkritische Sendungen, bei denen jede Stunde zählt.',
-            'transport.card3.title': 'Seefracht',
-            'transport.card3.text':
-              'Container- und Sammelverkehre für kosteneffiziente Langstreckentransporte.',
-            'about.title': 'Über A SHPED – AGS',
-            'about.text':
-              'Mit Sitz in Pristina, Kosovo, setzen wir auf langfristige Partnerschaften. Unser Team verbindet lokale Expertise mit internationaler Erfahrung, um Ihre Lieferkette stabil zu halten.',
-            'contact.title': 'Kontakt & Angebot',
-            'contact.text':
-              'Senden Sie uns Relation und Frachtangaben – wir melden uns mit einem individuellen Angebot.',
-            'contact.labelEmail': 'E-Mail:',
-            'contact.labelPhone': 'Telefon:',
-            'contact.labelLocation': 'Standort:',
-            'contact.labelHours': 'Öffnungszeiten:',
-            'contact.hours': 'Mo–Sa 08:00–18:00',
-            'form.company': 'Firmenname',
-            'form.email': 'E-Mail',
-            'form.route': 'Relation (z. B. Pristina → Wien)',
-            'form.cargo': 'Art / Gewicht der Fracht',
-            'form.details':
-              'Weitere Details (Incoterms, Termine, Ladebedingungen)',
-            'form.submit': 'Anfrage senden'
-          },
-          fr: {
-            'topbar.hours': 'Lun–Sam 08h00–18h00',
-            'nav.home': 'Accueil',
-            'nav.spedition': 'Expédition (A SHPED)',
-            'nav.transport': 'Transport & Logistique (AGS)',
-            'nav.about': 'À propos',
-            'nav.contact': 'Contact',
-            'hero.title': 'Services fiables de logistique et de transport en Europe',
-            'hero.text':
-              'A SHPED gère vos formalités douanières et la documentation, tandis qu’AGS assure un transport rapide et sécurisé par route, air et mer.',
-            'hero.ctaServices': 'Nos services',
-            'hero.ctaContact': 'Nous contacter',
-            'services.title': 'Ce que nous faisons',
-            'services.text':
-              'Nous combinons des services d’expédition professionnels avec un transport et une logistique flexibles pour vous offrir un seul partenaire, du dédouanement jusqu’à la livraison.',
-            'spedition.title': 'A SHPED – Services d’expédition',
-            'spedition.text':
-              'Assistance professionnelle pour les formalités douanières et la documentation afin que vos marchandises franchissent les frontières sans problème et dans les délais.',
-            'spedition.card1.title': 'Documents T1',
-            'spedition.card1.text':
-              'Préparation et gestion des documents de transit T1 pour le transport routier en Europe.',
-            'spedition.card2.title': 'Documents d’import & d’export',
-            'spedition.card2.text':
-              'IM4, IM5, IM7, IM9, EX1–EX3 et autres documents préparés correctement et à temps.',
-            'spedition.card3.title': 'Support transit & douane',
-            'spedition.card3.text':
-              'Assistance pour le dédouanement, les CMR et les procédures de transit.',
-            'transport.title': 'AGS – Transport & Logistique',
-            'transport.text':
-              'Solutions routières, aériennes et maritimes adaptées à votre cargaison, à vos délais et à votre budget.',
-            'transport.card1.title': 'Transport routier',
-            'transport.card1.text':
-              'Chargements complets (FTL) et groupage (LTL) à travers l’Europe avec des partenaires fiables.',
-            'transport.card2.title': 'Transport aérien',
-            'transport.card2.text':
-              'Solutions rapides pour les envois urgents lorsque chaque heure compte.',
-            'transport.card3.title': 'Transport maritime',
-            'transport.card3.text':
-              'Options en conteneur et groupage pour des flux longue distance à coût optimisé.',
-            'about.title': 'À propos de A SHPED – AGS',
-            'about.text':
-              'Basés à Pristina, Kosovo, nous privilégions des partenariats à long terme. Notre équipe combine expertise locale et expérience internationale pour sécuriser votre chaîne logistique.',
-            'contact.title': 'Contact & devis',
-            'contact.text':
-              'Envoyez-nous la relation et les détails de votre cargaison et nous vous répondrons avec une offre personnalisée.',
-            'contact.labelEmail': 'E-mail :',
-            'contact.labelPhone': 'Téléphone :',
-            'contact.labelLocation': 'Adresse :',
-            'contact.labelHours': 'Horaires :',
-            'contact.hours': 'Lun–Sam 08h00–18h00',
-            'form.company': 'Nom de l’entreprise',
-            'form.email': 'E-mail',
-            'form.route': 'Relation (ex. Pristina → Vienne)',
-            'form.cargo': 'Type / poids de la cargaison',
-            'form.details':
-              'Détails supplémentaires (Incoterms, dates, conditions de chargement)',
-            'form.submit': 'Envoyer la demande'
-          },
-          it: {
-            'topbar.hours': 'Lun–Sab 08:00–18:00',
-            'nav.home': 'Home',
-            'nav.spedition': 'Spedizioni (A SHPED)',
-            'nav.transport': 'Trasporti & Logistica (AGS)',
-            'nav.about': 'Chi siamo',
-            'nav.contact': 'Contatti',
-            'hero.title': 'Spedizioni e trasporti affidabili in tutta Europa',
-            'hero.text':
-              'A SHPED si occupa delle pratiche doganali e della documentazione, mentre AGS garantisce trasporti e logistica rapidi e sicuri via strada, aria e mare.',
-            'hero.ctaServices': 'I nostri servizi',
-            'hero.ctaContact': 'Contattaci',
-            'services.title': 'Cosa facciamo',
-            'services.text':
-              'Uniamo servizi di spedizione professionali con soluzioni di trasporto e logistica flessibili, offrendoti un unico partner dal dogana alla consegna.',
-            'spedition.title': 'A SHPED – Servizi di spedizione',
-            'spedition.text':
-              'Supporto professionale per dogana e documentazione affinché le tue merci attraversino le frontiere senza problemi e puntualmente.',
-            'spedition.card1.title': 'Documenti T1',
-            'spedition.card1.text':
-              'Preparazione e gestione dei documenti di transito T1 per i trasporti stradali in Europa.',
-            'spedition.card2.title': 'Documenti di import/export',
-            'spedition.card2.text':
-              'IM4, IM5, IM7, IM9, EX1–EX3 e relativa documentazione preparata correttamente e nei tempi.',
-            'spedition.card3.title': 'Supporto transito & dogana',
-            'spedition.card3.text':
-              'Assistenza per sdoganamento, CMR e procedure di transito.',
-            'transport.title': 'AGS – Trasporti & Logistica',
-            'transport.text':
-              'Soluzioni su strada, via aerea e via mare adattate al tuo carico, ai tempi e al budget.',
-            'transport.card1.title': 'Trasporto stradale',
-            'transport.card1.text':
-              'Carichi completi (FTL) e groupage (LTL) in Europa con partner affidabili e comunicazione chiara.',
-            'transport.card2.title': 'Trasporto aereo',
-            'transport.card2.text':
-              'Soluzioni rapide per spedizioni urgenti quando ogni ora conta.',
-            'transport.card3.title': 'Trasporto marittimo',
-            'transport.card3.text':
-              'Opzioni container e groupage per flussi a lunga distanza con costi ottimizzati.',
-            'about.title': 'Su A SHPED – AGS',
-            'about.text':
-              'Con sede a Pristina, Kosovo, puntiamo su collaborazioni di lungo periodo. Il nostro team unisce esperienza locale e internazionale per mantenere stabile la tua supply chain.',
-            'contact.title': 'Contatti & preventivi',
-            'contact.text':
-              'Inviaci la relazione e i dettagli del carico e ti risponderemo con un’offerta personalizzata.',
-            'contact.labelEmail': 'E-mail:',
-            'contact.labelPhone': 'Telefono:',
-            'contact.labelLocation': 'Sede:',
-            'contact.labelHours': 'Orari di lavoro:',
-            'contact.hours': 'Lun–Sab 08:00–18:00',
-            'form.company': 'Nome azienda',
-            'form.email': 'E-mail',
-            'form.route': 'Rotta (es. Pristina → Vienna)',
-            'form.cargo': 'Tipo / peso del carico',
-            'form.details':
-              'Dettagli aggiuntivi (Incoterms, date, condizioni di carico)',
-            'form.submit': 'Invia richiesta'
-          },
-          sq: {
-            'topbar.hours': 'Hënë–Shtunë 08:00–18:00',
-            'nav.home': 'Ballina',
-            'nav.spedition': 'Spedicione (A SHPED)',
-            'nav.transport': 'Transport & Logjistikë (AGS)',
-            'nav.about': 'Rreth Nesh',
-            'nav.contact': 'Kontakt',
-            'hero.title': 'Spedicione dhe Transport i Besueshëm në Evropë',
-            'hero.text':
-              'A SHPED kujdeset për doganat dhe dokumentacionin tuaj, ndërsa AGS ofron transport dhe logjistikë të shpejtë dhe të sigurt rrugor, ajror dhe detar.',
-            'hero.ctaServices': 'Shërbimet Tona',
-            'hero.ctaContact': 'Na Kontaktoni',
-            'services.title': 'Çfarë Bëjmë Ne',
-            'services.text':
-              'Ne kombinojmë shërbimet profesionale të spedicioneve me transport fleksibël dhe logjistikë, që të keni një partner nga doganat deri te dorëzimi final.',
-            'spedition.title': 'A SHPED – Shërbime Spedicioni',
-            'spedition.text':
-              'Mbështetje profesionale për doganat dhe dokumentacionin në mënyrë që malli juaj të kalojë kufijtë pa probleme dhe në kohë.',
-            'spedition.card1.title': 'Deklarata T1',
-            'spedition.card1.text':
-              'Përgatitja dhe menaxhimi i dokumenteve të transitit T1 për transport rrugor nëpër Evropë.',
-            'spedition.card2.title': 'Dokumentacion Importi & Exporti',
-            'spedition.card2.text':
-              'IM4, IM5, IM7, IM9, EX1–EX3 dhe dokumentacioni përkatës i përgatitur saktë dhe me kohë.',
-            'spedition.card3.title': 'Mbështetje Transit & Dogane',
-            'spedition.card3.text':
-              'Asistencë për zhdoganime, CMR dhe procedurat e transitit për dërgesat tuaja.',
-            'transport.title': 'AGS – Transport & Logjistikë',
-            'transport.text':
-              'Zgjidhje fleksibile rrugore, ajrore dhe detare të përshtatura për mallin, afatet dhe buxhetin tuaj.',
-            'transport.card1.title': 'Transport Rrugor',
-            'transport.card1.text':
-              'Ngarkesa të plota (FTL) dhe grupazhe (LTL) nëpër Evropë me partnerë të besueshëm dhe komunikim të qartë.',
-            'transport.card2.title': 'Transport Ajror',
-            'transport.card2.text':
-              'Zgjidhje të shpejta për dërgesa kur çdo orë ka rëndësi.',
-            'transport.card3.title': 'Transport Detar',
-            'transport.card3.text':
-              'Opsione kontejnerike dhe grupazhi për flukse të gjata me kosto efikase.',
-            'about.title': 'Rreth A SHPED – AGS',
-            'about.text':
-              'Me seli në Prishtinë, Kosovë, ne fokusohemi në partneritete afatgjata me klientët tanë. Ekipi ynë kombinon përvojën lokale me përvojën ndërkombëtare për të mbajtur zinxhirin tuaj të furnizimit të qëndrueshëm.',
-            'contact.title': 'Kontakt & Oferta',
-            'contact.text':
-              'Na dërgoni relacionin dhe detajet e mallrave dhe ne do t’ju përgjigjemi me një ofertë të personalizuar.',
-            'contact.labelEmail': 'Email:',
-            'contact.labelPhone': 'Telefon:',
-            'contact.labelLocation': 'Lokacioni:',
-            'contact.labelHours': 'Orari i punës:',
-            'contact.hours': 'Hënë–Shtunë 08:00–18:00',
-            'form.company': 'Emri i kompanisë',
-            'form.email': 'Email',
-            'form.route': 'Relacioni (p.sh. Prishtinë → Vjenë)',
-            'form.cargo': 'Lloji / pesha e mallit',
-            'form.details':
-              'Detaje shtesë (Incoterms, data, kushtet e ngarkimit)',
-            'form.submit': 'Dërgo Kërkesën'
-          }
-        };
+            <div class="language-menu" id="language-menu" hidden>
+              <button type="button" class="language-option is-active" data-lang="sq">Shqip</button>
+              <button type="button" class="language-option" data-lang="en">English</button>
+              <button type="button" class="language-option" data-lang="de">Deutsch</button>
+              <button type="button" class="language-option" data-lang="fr">Français</button>
+              <button type="button" class="language-option" data-lang="it">Italiano</button>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
 
-        function applyLanguage(lang) {
-          const fallback = 'en';
-          const dict = translations[lang] || translations[fallback];
-
-          document.documentElement.lang = lang;
-
-          document
-            .querySelectorAll('[data-i18n]')
-            .forEach((el) => {
-              const key = el.getAttribute('data-i18n');
-              const value = dict[key] || translations[fallback][key];
-              if (value) el.textContent = value;
-            });
-
-          document
-            .querySelectorAll('[data-i18n-placeholder]')
-            .forEach((el) => {
-              const key = el.getAttribute('data-i18n-placeholder');
-              const value = dict[key] || translations[fallback][key];
-              if (value) el.setAttribute('placeholder', value);
-            });
-        }
-
-        function setLanguage(lang) {
-          applyLanguage(lang);
-          if (langLabel) {
-            langLabel.textContent = lang.toUpperCase();
-          }
-          if (window.localStorage) {
-            localStorage.setItem('site-lang', lang);
-          }
-        }
-
-        if (langButton && langMenu && langLabel) {
-          // Initial language from storage or default EN
-          const saved =
-            (window.localStorage && localStorage.getItem('site-lang')) || 'en';
-          setLanguage(saved);
-
-          langButton.addEventListener('click', () => {
-            const isOpen = langMenu.classList.toggle('lang-menu-open');
-            langButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-          });
-
-          langMenu.addEventListener('click', (event) => {
-            const link = event.target.closest('a[data-lang]');
-            if (!link) return;
-            event.preventDefault();
-            const code = link.getAttribute('data-lang');
-            setLanguage(code);
-          });
-
-          document.addEventListener('click', (event) => {
-            if (
-              !langButton.contains(event.target) &&
-              !langMenu.contains(event.target)
-            ) {
-              langMenu.classList.remove('lang-menu-open');
-              langButton.setAttribute('aria-expanded', 'false');
-            }
-          });
-        } else {
-          // Fallback: ensure English is applied even if controls are missing
-          applyLanguage('en');
-        }
-      </script>
-    </footer>
+    <script src="app.js"></script>
   </body>
 </html>
+
+
+
+
