@@ -53,7 +53,7 @@ const translations = {
       ],
       [
         "Import & Export",
-        "IM4, IM5, IM7, IM9 dhe EX1-EX3 të organizuara profesionalisht për të shmangur pengesa operative dhe vonesa të panevojshme.",
+        "IM4, IM5, IM6, IM7, IM9 dhe EX1-EX3 të organizuara profesionalisht për të shmangur pengesa operative dhe vonesa të panevojshme.",
       ],
       [
         "Transit & Doganë",
