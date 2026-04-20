@@ -357,8 +357,29 @@
           </div>
         </div>
 
-        <div class="container footer-bottom">
+<div class="container footer-bottom">
           <p>&copy; <span id="year"></span> A SHPED. Të gjitha të drejtat e rezervuara.</p>
+          <div class="footer-language">
+            <button
+              class="language-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="language-menu"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.9 9h-3.1a15.8 15.8 0 0 0-1.4-5A8.1 8.1 0 0 1 18.9 11ZM12 4.1c1.2 1.4 2.1 4 2.4 6.9H9.6C9.9 8.1 10.8 5.5 12 4.1ZM9.6 13h4.8c-.3 2.9-1.2 5.5-2.4 6.9-1.2-1.4-2.1-4-2.4-6.9ZM9.6 6a15.8 15.8 0 0 0-1.4 5H5.1A8.1 8.1 0 0 1 9.6 6ZM5.1 13h3.1a15.8 15.8 0 0 0 1.4 5A8.1 8.1 0 0 1 5.1 13Zm9.3 5a15.8 15.8 0 0 0 1.4-5h3.1a8.1 8.1 0 0 1-4.5 5Z"/>
+              </svg>
+              <span class="language-current">Shqip</span>
+            </button>
+
+            <div class="language-menu" id="language-menu" hidden>
+              <button type="button" class="language-option is-active" data-lang="sq">Shqip</button>
+              <button type="button" class="language-option" data-lang="en">English</button>
+              <button type="button" class="language-option" data-lang="de">Deutsch</button>
+              <button type="button" class="language-option" data-lang="fr">Français</button>
+              <button type="button" class="language-option" data-lang="it">Italiano</button>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
