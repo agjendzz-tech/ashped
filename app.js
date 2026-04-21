@@ -16,9 +16,9 @@ const FORM_TO_EMAIL = "ashped@ashped.com";
 
 const translations = {
   sq: {
-    title: "A SHPED | Shpedicion Profesional",
+    title: "A SHPED SHPK – Doganim & Shpedicion në Kosovë | Customs Clearance Kosovo",
     description:
-      "A SHPED ofron shpedicion profesional, dokumentacion doganor dhe koordinim operacional për lëvizje të sigurta dhe efikase të mallrave.",
+      "A SHPED ofron zhdoganim profesional në Kosovë, procedura EX1, EX2, EX3, IM4, IM5, IM6, IM7, IM9, T1 dhe aplikim për EORI number. Agjent doganor i licencuar.",
     nav: ["Shërbimet", "Procesi", "Rreth Nesh", "Kontakt", "Bashkëpunim"],
     eyebrow: "Doganë. Dokumentacion. Koordinim pa vonesa.",
     heroTitle: "Lëvize mallin me një partner që e mban procesin nën kontroll.",
