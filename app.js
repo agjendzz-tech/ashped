@@ -13,12 +13,180 @@ const EMAILJS_SERVICE_ID = "service_l4z4xkj";
 const EMAILJS_TEMPLATE_ID = "template_rg5uzft";
 const FORM_FROM_EMAIL = "ashped@ashped.com";
 const FORM_TO_EMAIL = "ashped@ashped.com";
+const partnersRings = document.getElementById("partners-rings");
+
+const partners = [
+  ["Eco Vent", "assets/Eco Vent Logo.jpg", "lime"],
+  ["Install Engineering", "assets/Install Engineering Logo.jpg"],
+  ["Berisha Group", "assets/Berisha Group Logo.jfif", "blue"],
+  ["Artech Distribution", "assets/Artech Logo.jfif", "red"],
+  ["Uje Rugove", "assets/Uje Rugove Logo.jpg", "blue"],
+  ["Koslabor", "assets/Koslabor H Logo.jpg"],
+  ["Game Star", "assets/Game Star Logo.png", "black"],
+  ["Qami Construction", "assets/Qami Construction Logo.jpg", "deep"],
+  ["BAT", "assets/BAT logo.png"],
+  ["Keis", "assets/Keis Logo.jpg", "blue"],
+  ["Babor", "assets/Babor Logo.jpg"],
+  ["Neki Dent", "assets/Neki Dent Logo.png", "black"],
+  ["Decon", "assets/Decon Logo.png", "sky"],
+  ["Buze Mustaqe", "assets/Buze Mustaqe Logo.jpeg", "black"],
+  ["Chlamys LLC", "assets/Chlamys LLC Logo.jpeg", "cream"],
+  ["Allianz", "assets/Allianz Logo.jpg"],
+  ["Port Izmir", "assets/Port Izmir Logo.png", "black"],
+  ["Kombinimi", "assets/Kombinimi Logo.jfif", "blue"],
+  ["Signify", "assets/signify logo.jpg"],
+  ["Samsung", "assets/Samsung Logo.jpg"],
+  ["Daikin", "assets/Daikin logo.png"],
+  ["Oharmed", "assets/Oharmed logo.png"],
+  ["Fabis", "assets/Fabis logo.png", "blue"],
+  ["Univers Lift", "assets/universlift logo.png"],
+  ["Level Tech", "assets/Level tech logo.jpg", "black"],
+  ["Plastmedikal", "assets/Plastmedikal logo.jpg", "maroon"],
+  ["Starpharm", "assets/starpharm logo.jfif"],
+  ["Dreni Pharm", "assets/Dreni Pharm logo.png"],
+  ["Butrinti", "assets/Butrinti logo.png"],
+  ["Boutique de la Parfumerie", "assets/Boutique Logo.png"],
+  ["Planet Computers", "assets/Planet computers logo.jpg", "black"],
+  ["Multibrand", "assets/Multibrand logo.png"],
+  ["Shehu-A", "assets/Shehu a logo.jpg"],
+  ["Novamed", "assets/Novamed logo.jpg"],
+  ["Nesa Home", "assets/Nesatex logo.jpg"],
+  ["Italian Style Group", "assets/Italian style group logo.jpg", "black"],
+  ["Onze Store", "assets/Onze Logo.png"],
+  ["Fitzone", "assets/Fitzone logo.jpg"],
+  ["Air Tech", "assets/Air Tech Logo.jfif"],
+  ["Forch", "assets/Forch logo.png"],
+  ["Dekra Mobile", "assets/Dekra logo.png"],
+  ["Digi Print", "assets/Digi print logo.jpg"],
+  ["City Alarm", "assets/City Alarm logo.png", "black"],
+  ["ABS Kosova", "assets/ABS kosova logo.png", "blue"],
+  ["Dent Fix", "assets/Dent Fix logo.jpg"],
+  ["Autostrada Biennale", "assets/Autostrada bienale logo.png", "black"],
+  ["Domus Doimo", "assets/Domus logo.png"],
+  ["Balkomex", "assets/Balkomex logo.jfif"],
+  ["Aren Pharma", "assets/Aren Pharma logo.png"],
+  ["Bonsai", "assets/Bonsai logo.jpg", "red"],
+  ["DPZ Argent", "assets/DPZ Argent logo.jfif"],
+  ["AR-TECH", "assets/Ar-tech logo.png"],
+  ["Arch Project", "assets/Arch Project logo.jfif", "black"],
+  ["Vaider", "assets/Vaider logo.jfif"],
+  ["Bas Tuti", "assets/Bas tuti logo.png"],
+  ["Al Pharma", "assets/Al Pharm Logo.png"],
+  ["Agro Resit", "assets/Agro resit logo.jfif", "green"],
+  ["Ideal Floors", "assets/Ideal Floors logo.jfif"],
+  ["Albkos Safety", "assets/Albkos Safety logo.jfif", "red"],
+  ["Vijayalakshmi", "assets/VIJAYALAKSHMI logo.jfif"],
+  ["Ceracarta", "assets/Ceracarta logo.jfif"],
+  ["Marmara", "assets/Marmara logo.png"],
+  ["Bio Pharm", "assets/Bio Pharm logo.jfif"],
+  ["Aspel", "assets/Aspel logo.png"],
+  ["Nasan", "assets/Nasan logo.png", "teal"],
+  ["Sevincler", "assets/Sevincler logo.png"],
+  ["Agro Pharma", "assets/Agro Pharma Logo.jpg"],
+  ["Noll", "assets/Noll logo.png", "black"],
+  ["Osma Werm", "assets/Osma werm logo.jpg"],
+  ["Kic Krones", "assets/Kic krones logo.jfif", "blue"],
+  ["A&A Pharma", "assets/A&A Pharma logo.png"],
+  ["Hira Pamuk", "assets/Hira pamuk logo.png"],
+  ["OHC", "assets/OHC logo.png", "sky"],
+  ["Note", "assets/Note logo.png"],
+  ["Nobel Ilac", "assets/Nobel logo.jpeg"],
+  ["Yeauty", "assets/Yeauty logo.png"],
+  ["Du Care", "assets/Du care logo.png"],
+  ["Dream Distribution", "assets/Dream distribution logo.png", "maroon"],
+  ["Dejavous", "assets/Dejavous logo.png", "black"],
+  ["Cream Co", "assets/Cream co logo.png"],
+  ["Maruderm", "assets/Maruderm Logo.jpeg"],
+  ["Tio Medikal", "assets/Tio medikal logo.jfif"],
+  ["La Croa", "assets/La croa logo.png", "black"],
+  ["SonoScape", "assets/sonoscape logo.jfif", "teal"],
+  ["GGM Gastro", "assets/ggm gastro logo.jpg"],
+  ["Demo Medical", "assets/Demo medical logo.png"],
+  ["Yiwu Global", "assets/Yiwu Logo.jpg"],
+  ["Ora Group", "assets/Ora Group logo.png"],
+  ["Wohu Optical", "assets/Wohu logo.jfif"],
+  ["Alfa Laval", "assets/Alfa Laval logo.png"],
+  ["Madekos", "assets/Madekos Logo.png"],
+  ["Gama89", "assets/Gama89 Logo.jpg", "green"],
+  ["Oxygen Pharma", "assets/Oxygen Pharma logo.jpg"],
+  ["Kandil", "assets/Kandil logo.png"],
+  ["Aqua Medikal", "assets/Aqua medikal logo.png"],
+  ["Marzen", "assets/Marzen logo.png"],
+  ["Utopia", "assets/Utopia logo.png"],
+  ["Agrocoop Albania", "assets/Agrocoop alb logo.jfif"],
+  ["Aesku Group", "assets/Aesku logo.png"],
+  ["Catering Services", "assets/Catering Logo.jpg"],
+  ["Safe Creative", "assets/safe creative logo.jpg"],
+  ["Sinorg", "assets/Sinorg logo.png"],
+  ["Nordic Wood Group", "assets/Nordic Logo.png", "black"],
+  ["WAS Germany", "assets/WAS logo.png", "black"],
+  ["Agrocoop", "assets/Agrocoop logo.png"],
+  ["UCGEN", "assets/UCGEN logo.png"],
+  ["Atilim", "assets/Atilim Logo.png"],
+];
+
+function renderPartnersOrbit() {
+  if (!partnersRings) return;
+
+  partnersRings.innerHTML = "";
+
+  const isMobile = window.matchMedia("(max-width: 860px)").matches;
+  const ringConfig = isMobile
+    ? [
+        { count: 10, radius: 90, size: 58, offset: 0 },
+        { count: 14, radius: 130, size: 54, offset: 9 },
+        { count: 18, radius: 170, size: 50, offset: 18 },
+        { count: 22, radius: 210, size: 46, offset: 6 },
+        { count: 26, radius: 248, size: 42, offset: 15 },
+        { count: 30, radius: 286, size: 38, offset: 24 },
+      ]
+    : [
+        { count: 10, radius: 180, size: 92, offset: 0 },
+        { count: 14, radius: 250, size: 88, offset: 9 },
+        { count: 18, radius: 320, size: 84, offset: 18 },
+        { count: 22, radius: 395, size: 80, offset: 6 },
+        { count: 26, radius: 470, size: 74, offset: 15 },
+        { count: 30, radius: 545, size: 68, offset: 24 },
+      ];
+
+  let index = 0;
+
+  ringConfig.forEach((ring) => {
+    const ringElement = document.createElement("div");
+    ringElement.className = "orbit-ring";
+    ringElement.style.width = `${ring.radius * 2 + ring.size}px`;
+    ringElement.style.height = `${ring.radius * 2 + ring.size}px`;
+    ringElement.style.setProperty("--orbit-duration", `${28 + index * 0.35}s`);
+    ringElement.style.setProperty("--orbit-direction", index % 2 === 0 ? "normal" : "reverse");
+
+    const items = partners.slice(index, index + ring.count);
+    const angleStep = 360 / Math.max(items.length, 1);
+
+    items.forEach(([name, src, theme], itemIndex) => {
+      const badge = document.createElement("article");
+      badge.className = `partner-logo badge-${theme || "white"}`;
+      badge.style.setProperty("--angle", `${ring.offset + itemIndex * angleStep}deg`);
+      badge.style.setProperty("--orbit-radius", `-${ring.radius}px`);
+      badge.style.setProperty("--size", `${ring.size}px`);
+
+      const image = document.createElement("img");
+      image.src = src;
+      image.alt = `${name} logo`;
+      image.loading = "lazy";
+      badge.appendChild(image);
+      ringElement.appendChild(badge);
+    });
+
+    partnersRings.appendChild(ringElement);
+    index += ring.count;
+  });
+}
 
 const translations = {
   sq: {
-    title: "A SHPED SHPK – Doganim & Shpedicion në Kosovë | Customs Clearance Kosovo",
+    title: "A SHPED | Shpedicion Profesional",
     description:
-      "A SHPED ofron zhdoganim profesional në Kosovë, procedura EX1, EX2, EX3, IM4, IM5, IM6, IM7, IM9, T1 dhe aplikim për EORI number. Agjent doganor i licencuar.",
+      "A SHPED ofron shpedicion profesional, dokumentacion doganor dhe koordinim operacional për lëvizje të sigurta dhe efikase të mallrave.",
     nav: ["Shërbimet", "Procesi", "Rreth Nesh", "Kontakt", "Bashkëpunim"],
     eyebrow: "Doganë. Dokumentacion. Koordinim pa vonesa.",
     heroTitle: "Lëvize mallin me një partner që e mban procesin nën kontroll.",
@@ -53,7 +221,7 @@ const translations = {
       ],
       [
         "Import & Export",
-        "IM4, IM5, IM6, IM7, IM9 dhe EX1-EX3 të organizuara profesionalisht për të shmangur pengesa operative dhe vonesa të panevojshme.",
+        "IM4, IM5, IM7, IM9 dhe EX1-EX3 të organizuara profesionalisht për të shmangur pengesa operative dhe vonesa të panevojshme.",
       ],
       [
         "Transit & Doganë",
@@ -592,6 +760,15 @@ try {
   initialLanguage = localStorage.getItem("ashped-language") || "sq";
 } catch {}
 applyLanguage(initialLanguage);
+renderPartnersOrbit();
+
+let partnersResizeTimer;
+window.addEventListener("resize", () => {
+  window.clearTimeout(partnersResizeTimer);
+  partnersResizeTimer = window.setTimeout(() => {
+    renderPartnersOrbit();
+  }, 120);
+});
 
 if (window.emailjs) {
   window.emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
