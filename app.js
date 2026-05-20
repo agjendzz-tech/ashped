@@ -13,7 +13,7 @@ const EMAILJS_SERVICE_ID = "service_l4z4xkj";
 const EMAILJS_TEMPLATE_ID = "template_rg5uzft";
 const FORM_FROM_EMAIL = "ashped@ashped.com";
 const FORM_TO_EMAIL = "ashped@ashped.com";
-const partnersRings = document.getElementById("partners-rings");
+const partnersSlider = document.getElementById("partners-slider");
 
 const partners = [
   ["Eco Vent", "assets/Eco Vent Logo.jpg", "lime"],
@@ -125,60 +125,45 @@ const partners = [
   ["Atilim", "assets/Atilim Logo.png"],
 ];
 
-function renderPartnersOrbit() {
-  if (!partnersRings) return;
+function createPartnerCard([name, src, theme]) {
+  const card = document.createElement("article");
+  card.className = `partner-slide badge-${theme || "white"}`;
 
-  partnersRings.innerHTML = "";
+  const image = document.createElement("img");
+  image.src = src;
+  image.alt = `${name} logo`;
+  image.loading = "lazy";
 
-  const isMobile = window.matchMedia("(max-width: 860px)").matches;
-  const ringConfig = isMobile
-    ? [
-        { count: 10, radius: 90, size: 58, offset: 0 },
-        { count: 14, radius: 130, size: 54, offset: 9 },
-        { count: 18, radius: 170, size: 50, offset: 18 },
-        { count: 22, radius: 210, size: 46, offset: 6 },
-        { count: 26, radius: 248, size: 42, offset: 15 },
-        { count: 30, radius: 286, size: 38, offset: 24 },
-      ]
-    : [
-        { count: 10, radius: 180, size: 92, offset: 0 },
-        { count: 14, radius: 250, size: 88, offset: 9 },
-        { count: 18, radius: 320, size: 84, offset: 18 },
-        { count: 22, radius: 395, size: 80, offset: 6 },
-        { count: 26, radius: 470, size: 74, offset: 15 },
-        { count: 30, radius: 545, size: 68, offset: 24 },
-      ];
+  const label = document.createElement("span");
+  label.textContent = name;
 
-  let index = 0;
+  card.append(image, label);
+  return card;
+}
 
-  ringConfig.forEach((ring) => {
-    const ringElement = document.createElement("div");
-    ringElement.className = "orbit-ring";
-    ringElement.style.width = `${ring.radius * 2 + ring.size}px`;
-    ringElement.style.height = `${ring.radius * 2 + ring.size}px`;
-    ringElement.style.setProperty("--orbit-duration", `${28 + index * 0.35}s`);
-    ringElement.style.setProperty("--orbit-direction", index % 2 === 0 ? "normal" : "reverse");
+function renderPartnersSlider() {
+  if (!partnersSlider) return;
 
-    const items = partners.slice(index, index + ring.count);
-    const angleStep = 360 / Math.max(items.length, 1);
+  partnersSlider.innerHTML = "";
 
-    items.forEach(([name, src, theme], itemIndex) => {
-      const badge = document.createElement("article");
-      badge.className = `partner-logo badge-${theme || "white"}`;
-      badge.style.setProperty("--angle", `${ring.offset + itemIndex * angleStep}deg`);
-      badge.style.setProperty("--orbit-radius", `-${ring.radius}px`);
-      badge.style.setProperty("--size", `${ring.size}px`);
+  const rows = [
+    partners.filter((_, index) => index % 2 === 0),
+    partners.filter((_, index) => index % 2 === 1),
+  ];
 
-      const image = document.createElement("img");
-      image.src = src;
-      image.alt = `${name} logo`;
-      image.loading = "lazy";
-      badge.appendChild(image);
-      ringElement.appendChild(badge);
+  rows.forEach((rowPartners, index) => {
+    const row = document.createElement("div");
+    row.className = `partners-track-row ${index % 2 === 1 ? "is-reverse" : ""}`;
+
+    const track = document.createElement("div");
+    track.className = "partners-track";
+
+    [...rowPartners, ...rowPartners].forEach((partner) => {
+      track.appendChild(createPartnerCard(partner));
     });
 
-    partnersRings.appendChild(ringElement);
-    index += ring.count;
+    row.appendChild(track);
+    partnersSlider.appendChild(row);
   });
 }
 
@@ -760,15 +745,7 @@ try {
   initialLanguage = localStorage.getItem("ashped-language") || "sq";
 } catch {}
 applyLanguage(initialLanguage);
-renderPartnersOrbit();
-
-let partnersResizeTimer;
-window.addEventListener("resize", () => {
-  window.clearTimeout(partnersResizeTimer);
-  partnersResizeTimer = window.setTimeout(() => {
-    renderPartnersOrbit();
-  }, 120);
-});
+renderPartnersSlider();
 
 if (window.emailjs) {
   window.emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
